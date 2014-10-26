@@ -1,10 +1,19 @@
 name: WnPlugin
 main: com.dinnerbone.bukkit.sample.WnPlugin
-version: 0.2
+version: 0.3
+author: spacegeek224
+prefix: [WnPlugin]
+website: http://mcwithernetwork.enjin.com
 commands:
   pos:
     description: Displays your position or teleports you to another.
     usage: "Usage: '/pos' to get current position, or '/pos x y z' to teleport to x,y,z"
+    permission: wn.pos
   debug:
     description: Toggles your debugging status for this plugin.
     usage: /debug
+    alises: [dbg, dbgwn]
+permissions:
+  wn.pos
+    default: true
+    description: Get your position or tp to a position.
