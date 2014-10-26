@@ -1,6 +1,6 @@
 name: WnPlugin
 main: com.dinnerbone.bukkit.sample.WnPlugin
-version: 0.1
+version: 0.2
 commands:
   pos:
     description: Displays your position or teleports you to another.

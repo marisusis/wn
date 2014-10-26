@@ -3,6 +3,7 @@ package com.dinnerbone.bukkit.sample;
 
 import java.util.HashMap;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -32,6 +33,7 @@ public class WnPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         // TODO: Place any custom enable code here including the registration of any events
+    	Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "Wither" + ChatColor.DARK_PURPLE + "Network" + ChatColor.RED + ChatColor.BOLD + " main plugin enabled!");
     	getLogger().info(ChatColor.GOLD + "Wither" + ChatColor.DARK_PURPLE + "Network" + ChatColor.RED + ChatColor.BOLD + " main plugin enabled!");
         // Register our events
         PluginManager pm = getServer().getPluginManager();

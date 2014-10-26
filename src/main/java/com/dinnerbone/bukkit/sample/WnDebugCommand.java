@@ -1,5 +1,7 @@
 package com.dinnerbone.bukkit.sample;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,7 +25,8 @@ public class WnDebugCommand implements CommandExecutor {
 
             return true;
         } else {
-            return false;
+        	Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "Wither" + ChatColor.DARK_PURPLE + "Network" + ChatColor.RED + ChatColor.BOLD + " main plugin enabled!");
+            return true;
         }
     }
 }
