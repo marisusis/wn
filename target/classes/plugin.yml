@@ -1,6 +1,6 @@
 name: WnPlugin
 main: com.dinnerbone.bukkit.sample.WnPlugin
-version: 0.9
+version: 1.1
 author: spacegeek224
 prefix: [WnPlugin]
 authors: [Shoryukestrel, creeperkiller_18, ratmannugget]
@@ -14,6 +14,6 @@ commands:
     usage: /debug
     aliases: [dbg,debugwn]
   wn:
-    description:The main server command.
+    description: The main server command.
     usage: /wn
-    aliases: [wnp]
+    aliases: [wnplugin]

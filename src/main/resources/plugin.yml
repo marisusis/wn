@@ -14,6 +14,6 @@ commands:
     usage: /debug
     aliases: [dbg,debugwn]
   wn:
-    description:The main server command.
+    description: The main server command.
     usage: /wn
-    aliases: [wnp]
+    aliases: [wnplugin]
