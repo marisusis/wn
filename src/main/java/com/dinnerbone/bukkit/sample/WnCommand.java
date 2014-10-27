@@ -13,7 +13,10 @@ public class WnCommand implements CommandExecutor{
 		String wnp = "[WN] ";
 		// TODO Auto-generated method stub
 		if (cmd.getName().equalsIgnoreCase("wn")) {
-			sender.sendMessage(ChatColor.GOLD + wnp + ChatColor.DARK_AQUA + "Do /wn help for help.");
+			
+			if (args[0].equalsIgnoreCase("")) {
+				sender.sendMessage(ChatColor.GOLD + wnp + ChatColor.DARK_AQUA + "Do /wn help for help.");
+			}
 			if (args[0].equalsIgnoreCase("help")) {
 				sender.sendMessage(ChatColor.GOLD + wnp + ChatColor.LIGHT_PURPLE + "Use /bukkit:help wnplugin for help.");
 			}
