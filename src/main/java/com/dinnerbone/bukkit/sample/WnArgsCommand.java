@@ -10,7 +10,6 @@ public class WnArgsCommand implements CommandExecutor{
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-		String abc = null;
 		String wnp = "[WitherNetwork]";
 		// TODO Auto-generated method stub
 		if (cmd.getName().equalsIgnoreCase("wn")) {
