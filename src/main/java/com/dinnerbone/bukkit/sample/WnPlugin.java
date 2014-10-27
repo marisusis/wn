@@ -43,6 +43,7 @@ public class WnPlugin extends JavaPlugin {
         // Register our commands
         getCommand("pos").setExecutor(new WnPosCommand());
         getCommand("debug").setExecutor(new WnDebugCommand(this));
+        getCommand("args").setExecutor(new WnArgsCommand());
 
         // EXAMPLE: Custom code, here we just output some info so we can check all is well
         PluginDescriptionFile pdfFile = this.getDescription();

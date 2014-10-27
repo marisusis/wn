@@ -3,10 +3,33 @@ main: com.dinnerbone.bukkit.sample.WnPlugin
 version: ${version}
 author: spacegeek224
 prefix: [WnPlugin]
+authors: [Shoryukestrel, creeperkiller_18, ratmannugget]
+website: http://dev.bukkit.org/bukkit-plugins/wnplugin
 commands:
   pos:
     description: Displays your position or teleports you to another.
+    permission: wn.pos
     usage: "Usage: '/pos' to get current position, or '/pos x y z' to teleport to x,y,z"
   debug:
     description: Toggles your debugging status for this plugin.
     usage: /debug
+    aliases: [dbg,debugwn]
+    permission: wn.debug
+  wn:
+    description:The main server command.
+    usage: /wn [arguments]
+    aliases: [wnp]
+    permission: wn.wn
+ permissions:
+  wn.*:
+    description: Full access.
+    children:
+      wn.pos: true
+      wn.debug: true
+      wn.wn: true
+  wn.debug:
+    default: false
+  wn.pos:
+    default: false
+  wn.wn:
+    default: op
