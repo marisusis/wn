@@ -15,7 +15,7 @@ public class WnCommand implements CommandExecutor{
 		// TODO Auto-generated method stub
 		if (cmd.getName().equalsIgnoreCase("wn")) {
 			
-			if (args[0].equalsIgnoreCase("help")) {
+			if (args[0] == null) {
 				helpMessage(sender);
 			}
 				
