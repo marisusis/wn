@@ -34,7 +34,6 @@ public class WnPlugin extends JavaPlugin {
     public void onEnable() {
         // TODO: Place any custom enable code here including the registration of any events
     	Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "Wither" + ChatColor.DARK_PURPLE + "Network" + ChatColor.RED + ChatColor.BOLD + " main plugin enabled!");
-    	getLogger().info(ChatColor.GOLD + "Wither" + ChatColor.DARK_PURPLE + "Network" + ChatColor.RED + ChatColor.BOLD + " main plugin enabled!");
         // Register our events
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(playerListener, this);
@@ -44,6 +43,7 @@ public class WnPlugin extends JavaPlugin {
         getCommand("pos").setExecutor(new WnPosCommand());
         getCommand("debug").setExecutor(new WnDebugCommand(this));
         getCommand("wn").setExecutor(new WnCommand());
+        getCommand("wnb").setExecutor(new WnBroadcastCommand());
 
         // EXAMPLE: Custom code, here we just output some info so we can check all is well
         PluginDescriptionFile pdfFile = this.getDescription();

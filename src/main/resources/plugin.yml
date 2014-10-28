@@ -2,7 +2,7 @@ name: WnPlugin
 main: com.dinnerbone.bukkit.sample.WnPlugin
 version: ${version}
 author: spacegeek224
-prefix: [WnPlugin]
+prefix: WnPlugin
 authors: [Shoryukestrel, creeperkiller_18, ratmannugget]
 website: http://dev.bukkit.org/bukkit-plugins/wnplugin
 commands:
@@ -12,8 +12,12 @@ commands:
   debug:
     description: Toggles your debugging status for this plugin.
     usage: /debug
-    aliases: [dbg,debugwn]
+    aliases: [dbg,debugwn,causetheserverandtheconsoletogetrandommessagesthatwillannoypeople]
   wn:
     description: The main server command.
     usage: /wn
-    aliases: [wnplugin]
+    aliases: [wnplugin,withernetwork,wnetwork,withern]
+  wnb:
+    description: Broadcast
+    usage: /wnb
+    alieses: [wnbroadcast,bc,withernetworkbroadcastmessage]
