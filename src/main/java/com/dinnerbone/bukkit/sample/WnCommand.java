@@ -4,13 +4,23 @@ import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Egg;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerEggThrowEvent;
 
 public class WnCommand implements CommandExecutor{
-
+	
+	private static WnPlugin instance;
+	public static WnPlugin getInstance()
+	{
+		return instance;
+	}
 	public boolean onCommand(final CommandSender sender, Command cmd, String label, String[] args) {
 		
 		// TODO Auto-generated method stub
@@ -26,6 +36,28 @@ public class WnCommand implements CommandExecutor{
 				Player plyr	= sender.getServer().getPlayer(sender.getName());
 				plyr.kickPlayer(ChatColor.RED + "You hacked!");				
 			}
+			else if (args.length == 1 && args[0].equalsIgnoreCase("eggs")) {
+				Player player = (Player) sender;
+				boolean on;
+		        if (on = false) {
+		        	on = true;
+		        	eggThrow(null, true);
+		        }
+		        else if (on = true) {
+		        	on = false;
+		        	eggThrow(null, false);
+		        }
+		    }
+			/*else if (args.length == 1 && args[0].equalsIgnoreCase("compass")) {
+				Player p = (Player) sender;
+				Location l = p.getLocation();
+				double x = l.getX();
+				double y = l.getY();
+				double z = l.getZ();
+				double y2 = y + 100;
+				Location l = 
+				p.setCompassTarget(arg0);
+			}*/
 			/**else if (args.length == 1 && args[0].equalsIgnoreCase("say")) {
 				Player player = (Player) sender;
 				bcm(ChatColor.BLUE + "" + ChatColor.BOLD + "" + player +);
@@ -117,5 +149,17 @@ public class WnCommand implements CommandExecutor{
 	}
 	public void lc(String message) {
 		Bukkit.getLogger().log(Level.INFO, message);
+	}
+	@EventHandler
+	public void eggThrow(PlayerEggThrowEvent event, boolean b) {
+		Egg egg = event.getEgg();		
+		if (b = true) {
+		event.setHatchingType(EntityType.SHEEP);
+		egg.setBounce(true);
+		}
+		else if (b = false) {
+			event.setHatchingType(EntityType.CHICKEN);
+			egg.setBounce(false);
+		}
 	}
 }

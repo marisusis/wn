@@ -19,7 +19,6 @@ public class WnPlugin extends JavaPlugin {
     private final WnPlayerListener playerListener = new WnPlayerListener(this);
     private final WnBlockListener blockListener = new WnBlockListener();
     private final HashMap<Player, Boolean> debugees = new HashMap<Player, Boolean>();
-
     @Override
     public void onDisable() {
         // TODO: Place any custom disable code here
@@ -38,12 +37,14 @@ public class WnPlugin extends JavaPlugin {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(playerListener, this);
         pm.registerEvents(blockListener, this);
-
+        
+       
         // Register our commands
         getCommand("pos").setExecutor(new WnPosCommand());
         getCommand("debug").setExecutor(new WnDebugCommand(this));
         getCommand("wn").setExecutor(new WnCommand());
         getCommand("wnb").setExecutor(new WnBroadcastCommand());
+        
 
         // EXAMPLE: Custom code, here we just output some info so we can check all is well
         PluginDescriptionFile pdfFile = this.getDescription();
