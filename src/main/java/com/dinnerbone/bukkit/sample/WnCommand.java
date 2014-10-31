@@ -16,11 +16,11 @@ import org.bukkit.event.player.PlayerEggThrowEvent;
 
 public class WnCommand implements CommandExecutor{
 	
-	private static WnPlugin instance;
-	public static WnPlugin getInstance()
-	{
-		return instance;
-	}
+	private final WnPlugin plugin;
+
+    public WnCommand(WnPlugin plugin) {
+        this.plugin = plugin;
+    }
 	public boolean onCommand(final CommandSender sender, Command cmd, String label, String[] args) {
 		
 		// TODO Auto-generated method stub
@@ -36,7 +36,11 @@ public class WnCommand implements CommandExecutor{
 				Player plyr	= sender.getServer().getPlayer(sender.getName());
 				plyr.kickPlayer(ChatColor.RED + "You hacked!");				
 			}
-			else if (args.length == 1 && args[0].equalsIgnoreCase("eggs")) {
+			else if (args.length == 1 && args[0].equalsIgnoreCase("cloud")) {
+				Player player = (Player) sender;
+				plugin.setCloud(player, !plugin.isCloud(player));
+			}
+			/*else if (args.length == 1 && args[0].equalsIgnoreCase("eggs")) {
 				Player player = (Player) sender;
 				boolean on;
 		        if (on = false) {
@@ -47,7 +51,7 @@ public class WnCommand implements CommandExecutor{
 		        	on = false;
 		        	eggThrow(null, false);
 		        }
-		    }
+		    }*/
 			/*else if (args.length == 1 && args[0].equalsIgnoreCase("compass")) {
 				Player p = (Player) sender;
 				Location l = p.getLocation();
@@ -150,7 +154,8 @@ public class WnCommand implements CommandExecutor{
 	public void lc(String message) {
 		Bukkit.getLogger().log(Level.INFO, message);
 	}
-	@EventHandler
+	
+	/*@EventHandler
 	public void eggThrow(PlayerEggThrowEvent event, boolean b) {
 		Egg egg = event.getEgg();		
 		if (b = true) {
@@ -161,5 +166,5 @@ public class WnCommand implements CommandExecutor{
 			event.setHatchingType(EntityType.CHICKEN);
 			egg.setBounce(false);
 		}
-	}
+	}*/
 }

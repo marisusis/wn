@@ -18,6 +18,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class WnPlugin extends JavaPlugin {
     private final WnPlayerListener playerListener = new WnPlayerListener(this);
     private final WnBlockListener blockListener = new WnBlockListener();
+    private final WnEggListener eggListener = new WnEggListener(this);
     private final HashMap<Player, Boolean> debugees = new HashMap<Player, Boolean>();
     @Override
     public void onDisable() {
@@ -37,12 +38,13 @@ public class WnPlugin extends JavaPlugin {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(playerListener, this);
         pm.registerEvents(blockListener, this);
+        pm.registerEvents(eggListener, this);
         
        
         // Register our commands
         getCommand("pos").setExecutor(new WnPosCommand());
         getCommand("debug").setExecutor(new WnDebugCommand(this));
-        getCommand("wn").setExecutor(new WnCommand());
+        getCommand("wn").setExecutor(new WnCommand(this));
         getCommand("wnb").setExecutor(new WnBroadcastCommand());
         
 
@@ -58,8 +60,19 @@ public class WnPlugin extends JavaPlugin {
             return false;
         }
     }
+    public boolean isCloud(final Player player) {
+        if (debugees.containsKey(player)) {
+            return debugees.get(player);
+        } else {
+            return false;
+        }
+    }
 
     public void setDebugging(final Player player, final boolean value) {
+        debugees.put(player, value);
+    }
+
+    public void setCloud(final Player player, final boolean value) {
         debugees.put(player, value);
     }
 }
