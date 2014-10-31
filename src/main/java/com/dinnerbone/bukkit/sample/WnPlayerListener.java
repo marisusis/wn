@@ -34,13 +34,13 @@ public class WnPlayerListener implements Listener {
     public void onPlayerMove(PlayerMoveEvent event) {
     	Player p = event.getPlayer();
     	if (plugin.isCloud(p)) {
-    	Location l = p.getLocation();
-    	ParticleEffect.HAPPY_VILLAGER.display(1, 1, 1, 2, 10, l, 3);
+    	Location l = p.getLocation(); //Gets the players location
+    	ParticleEffect.CLOUD.display(1, 1, 1, 2, 5, l, 3); //Displays cloud particles
     	}
         if (plugin.isDebugging(event.getPlayer())) {
             Location from = event.getFrom();
             Location to = event.getTo();
-            plugin.getLogger().info(String.format("From %.2f,%.2f,%.2f to %.2f,%.2f,%.2f", from.getX(), from.getY(), from.getZ(), to.getX(), to.getY(), to.getZ()));
+            //plugin.getLogger().info(String.format("From %.2f,%.2f,%.2f to %.2f,%.2f,%.2f", from.getX(), from.getY(), from.getZ(), to.getX(), to.getY(), to.getZ()));
         }
     }
 }
