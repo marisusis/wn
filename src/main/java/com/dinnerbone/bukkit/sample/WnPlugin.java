@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
@@ -39,7 +40,8 @@ public class WnPlugin extends JavaPlugin {
         pm.registerEvents(playerListener, this);
         pm.registerEvents(blockListener, this);
         pm.registerEvents(eggListener, this);
-        
+        Location l = new Location(Bukkit.getWorld("newspawn"), 516, 5, 103);
+        ParticleEffect.ANGRY_VILLAGER.display(1, 1, 1, 1, 1, l, 5);
        
         // Register our commands
         getCommand("pos").setExecutor(new WnPosCommand());

@@ -1,6 +1,6 @@
 name: WnPlugin
 main: com.dinnerbone.bukkit.sample.WnPlugin
-version: 2.3
+version: 2.4
 author: spacegeek224
 prefix: WnPlugin
 authors: [Shoryukestrel, creeperkiller_18, ratmannugget]
