@@ -48,6 +48,7 @@ public class WnPlugin extends JavaPlugin {
         getCommand("debug").setExecutor(new WnDebugCommand(this));
         getCommand("wn").setExecutor(new WnCommand(this));
         getCommand("wnb").setExecutor(new WnBroadcastCommand());
+        getCommand("report").setExecutor(new WnReportCommand());
         
 
         // EXAMPLE: Custom code, here we just output some info so we can check all is well
